@@ -1,0 +1,13 @@
+.news-post {
+  display: grid;
+  grid-template-columns: 1fr 900px 1fr;
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns: 1fr 90% 1fr;
+  }
+}
+.news-post > * {
+  grid-column: 2;
+}
+.news-date {
+  text-align: right;
+}
