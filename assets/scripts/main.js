@@ -1,1 +1,2 @@
-console.log( 'read JS' );
+console.log("read JS");
+import "./accordion.js";
