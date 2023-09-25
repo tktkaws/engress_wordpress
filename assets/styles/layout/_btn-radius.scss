@@ -1,0 +1,30 @@
+  .c-button-radius {
+    color: $c-background;
+    border-radius: 25px;
+    padding: 8px 16px;
+    font-size: fluid(12, 16, 320, 768);
+    font-weight: bold;
+    text-align: center;
+  }
+  .--hero {
+    width: fluid(180, 260, 320, 768);
+    height: fluid(40, 60, 320, 768);
+    background-color: $c-accent;
+    border-radius: 31px;
+  }
+  .--strength {
+    background-color: transparent;
+    border: solid 1px;
+    border-radius: 31px;
+    width: fluid(160, 200, 320, 768);
+    height: fluid(30, 50, 320, 768);
+    font-weight: normal;
+
+  }
+  .--cta {
+    background-color: $c-accent;
+    width: 280px;
+    height: 50px;
+    width: fluid(180, 280, 320, 768);
+    height: fluid(40, 50, 320, 768);
+  }
