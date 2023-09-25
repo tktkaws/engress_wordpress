@@ -1,0 +1,32 @@
+.l-hero {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 221px;
+    @media only screen and (max-width: 767px) {
+      grid-template-rows: 160px;
+    }
+  }
+  .l-hero img {
+    grid-row: 1;
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    object-fit: cover;
+  }
+  .l-hero-title {
+    color: $c-background;
+    font-weight: bold;
+    font-size: fluid(24, 32, 320, 767);
+    grid-column: 1/1;
+    grid-row: 1/1;
+    grid-row: 1;
+    grid-column: 1;
+    z-index: 1;
+    position: relative;
+    padding: 20px;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+  }

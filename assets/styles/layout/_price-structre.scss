@@ -1,0 +1,78 @@
+.price-structure {
+    display: grid;
+    grid-template-columns: 1fr 900px 1fr;
+    @media only screen and (max-width: 1000px) {
+      grid-template-columns: 1fr 90% 1fr;
+    }
+  }
+  .price-structure > * {
+    grid-column: 2;
+  }
+  .price-structure-title {
+    font-size: fluid(18, 36, 320, 767);
+    font-weight: bold;
+    margin-top: 58px;
+    text-align: center;
+  }
+  .price-structure-list {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    gap: 30px;
+    @media only screen and (max-width: 767px) {
+      margin-top: 40px;
+    }
+    @media only screen and (max-width: 500px) {
+      flex-direction: column;
+      gap: 50px;
+    }
+  }
+  .price-structure-list::before,
+  .price-structure-list::after {
+    content: "";
+    position: absolute;
+    font-size: 24px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: solid 1px;
+    width: 26px;
+  }
+  .price-structure-list::before {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  .price-structure-list::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  .price-structure-item {
+    width: 280px;
+    height: 90px;
+    background: $c-main;
+    color: $c-background;
+    text-align: center;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media only screen and (max-width: 1000px) {
+      width: calc(280px * 0.8);
+      height: calc(90px * 0.8);
+      font-size: calc(22px * 0.8);
+    }
+    @media only screen and (max-width: 767px) {
+      width: calc(280px * 0.6);
+      height: calc(90px * 0.6);
+      font-size: calc(22px * 0.6);
+    }
+  }
+  .price-structure-item-plus {
+    font-size: 60px;
+    font-weight: 100;
+  }
+  .price-structure-desc {
+    margin-top: 45px;
+    line-height: 1.6;
+  }

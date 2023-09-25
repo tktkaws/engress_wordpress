@@ -1,0 +1,115 @@
+.price-list {
+    display: grid;
+    grid-template-columns: 1fr 900px 1fr;
+    padding-bottom: 62px;
+    @media only screen and (max-width: 1000px) {
+      grid-template-columns: 1fr 90% 1fr;
+    }
+  }
+  .price-list > * {
+    grid-column: 2;
+  }
+  .price-list-title {
+    font-size: fluid(18, 36, 320, 767);
+    font-weight: bold;
+    margin-top: 90px;
+    text-align: center;
+  }
+  .price-list ul {
+    width: 100%;
+    justify-self: center;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding-top: 106px;
+    @media only screen and (max-width: 1000px) {
+      padding-top: 0;
+      width: 500px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    @media only screen and (max-width: 767px) {
+      padding-top: 0;
+      width: 300px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+  .price-list__card {
+    width: 220px;
+    @media only screen and (max-width: 1000px) {
+      padding-top: 80px;
+    }
+  }
+  .price-list__card.--orange {
+    margin-top: -36px;
+  }
+  .price-list__card-title {
+    background: $c-main;
+    color: $c-background;
+    height: 60px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .price-list__card-title.--orange {
+    background: $c-accent;
+    color: $c-background;
+    height: 96px;
+    flex-direction: column;
+    gap: 19px;
+  }
+  .price-list__card-body {
+    border: solid 1px;
+    border-top: none;
+    height: 444px;
+  }
+  .price-list__card-price {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 16px;
+    position: relative;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  .price-list__card-price.--orange {
+    color: $c-accent;
+  }
+  .price-list__card-price.--orange::after {
+    color: $c-main;
+  }
+
+  .price-list__card-price::after {
+    content: "*月額（税抜価格）";
+    position: absolute;
+    bottom: -16px;
+    left: 40px;
+    font-size: 16px;
+    font-weight: normal;
+  }
+  .price-list__card-desc {
+    margin-left: 24px;
+    padding: 16px;
+    position: relative;
+  }
+  .price-list__card-desc::before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+  .price-list__card-desc::before {
+    width: 8px;
+    height: 14px;
+    border-width: 0 2px 2px 0;
+    border-style: solid;
+    border-color: transparent $c-main $c-main transparent;
+    transform: rotate(45deg);
+  }
+  .price-list__card-desc--none {
+    margin-left: 24px;
+  }
