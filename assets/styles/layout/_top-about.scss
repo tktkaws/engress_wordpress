@@ -1,0 +1,108 @@
+.top-about {
+    background-color: $c-main;
+    color: $c-background;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 900px 1fr;
+    @media only screen and (max-width: 1000px) {
+      grid-template-columns: 1fr 90% 1fr;
+    }
+  }
+  .top-about > * {
+    grid-column: 2;
+    @media only screen and (max-width: 768px) {
+      grid-column: 1 / 4;
+    }
+  }
+  .top-about-title {
+    font-size: fluid(18, 36, 320, 768);
+    font-weight: bold;
+    margin-top: 63px;
+    line-height: 1.5;
+  }
+  .only-mb {
+    display: none;
+    @media only screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+  .only-pc {
+    display: block;
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .top-about ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 65px;
+  }
+  .top-about li {
+    font-size: 18px;
+    font-size: fluid(12, 18, 320, 768);
+    line-height: 2;
+  }
+  .top-about li:first-child {
+    margin-right: 27px;
+  }
+  .top-about ul li + li {
+    margin-left: 30px;
+  }
+  @media only screen and (max-width: 768px) {
+    .top-about ul {
+      flex-direction: column;
+      margin-top: fluid(16, 32, 320, 768);
+    }
+    .top-about li:first-child {
+      margin-right: 0px;
+    }
+    .top-about ul li + li {
+      margin-left: 0px;
+    }
+  }
+
+  .top-about-white {
+    margin-top: 83px;
+    margin-bottom: 54px;
+    height: 248px;
+    background-color: $c-background;
+    color: $c-main;
+    padding: 11px 16px;
+  }
+  @media only screen and (max-width: 768px) {
+    .top-about-white {
+      height: auto;
+      margin-top: fluid(24, 48, 320, 768);
+    }
+    .top-about-white-desc {
+      margin-bottom: 10px;
+    }
+  }
+  .top-about-white-container {
+    height: 100%;
+    border: $c-main solid 4px;
+  }
+  .top-about-ml {
+    margin-left: -0.6rem;
+  }
+  .top-about-white-title {
+    font-size: fluid(16, 36, 320, 768);
+    font-weight: bold;
+    line-height: 1.5;
+    margin-top: 8px;
+  }
+  .top-about-orange {
+    text-decoration: underline $c-accent;
+    text-decoration-thickness: 8px;
+    text-underline-offset: -5px;
+    text-decoration-skip-ink: none;
+  }
+  .top-about-white-desc {
+    font-size: fluid(12, 18, 320, 768);
+    line-height: 2;
+    margin-top: 17px;
+  }

@@ -1,0 +1,92 @@
+
+  .top-faq {
+    display: flex;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 900px 1fr;
+    @media only screen and (max-width: 1000px) {
+      grid-template-columns: 1fr 90% 1fr;
+    }
+  }
+  .top-faq > * {
+    grid-column: 2;
+  }
+  .top-faq-title {
+    font-size: fluid(18, 36, 320, 768);
+    font-weight: bold;
+    margin-top: 75px;
+    text-align: center;
+  }
+  .js-details:first-of-type {
+    margin-top: 32px;
+  }
+  .js-summary {
+    display: block;
+  }
+
+  .js-summary::-webkit-details-marker {
+    /* Safariで表示されるデフォルトの三角形アイコンを消去 */
+    display: none;
+  }
+  .js-summary_inner {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 24px;
+    padding-left: 0px;
+    border-top: 1px solid $c-sub-black;
+    font-size: fluid(12, 16, 320, 768);
+  }
+  .js-summary_inner .icon {
+    display: block;
+    position: relative;
+    width: 24px;
+    margin-left: 24px;
+    flex-shrink: 0;
+    transform-origin: center 43%;
+    transition: transform 0.4s;
+    @media only screen and (max-width: 1000px) {
+      margin-top: -10px;
+    }
+  }
+  .js-summary_inner {
+    .icon::before,
+  .icon::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: $c-sub-black;
+  }
+
+  .icon::before {
+    left: 0;
+  }
+
+  .icon::after {
+    right: -1px;
+    transform: rotate(90deg);
+  }
+
+  }
+
+
+  .js-details[open] .icon::after {
+    transform: rotate(180deg);
+  }
+  .js-content {
+    overflow: hidden;
+  }
+
+  .js-content_inner {
+    background-color: $c-sub;
+    padding: 24px 24px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: fluid(12, 16, 320, 768);
+  }

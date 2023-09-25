@@ -1,0 +1,182 @@
+.top-strength {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 900px 1fr;
+    @media only screen and (max-width: 1000px) {
+      grid-template-columns: 1fr 90% 1fr;
+    }
+  }
+  .top-strength > * {
+    grid-column: 2;
+    @media only screen and (max-width: 768px) {
+      grid-column: 1 / 4;
+    }
+  }
+  .top-strength-title {
+    font-size: fluid(18, 36, 320, 768);
+    font-weight: bold;
+    margin-top: 59px;
+    text-align: center;
+  }
+  .top-strength ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 59px;
+    justify-content: center;
+    align-items: center;
+  }
+  .top-strength__card {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-bottom: 60px;
+    @media only screen and (max-width: 1000px) {
+      width: 700px;
+      gap: 20px;
+    }
+    @media only screen and (max-width: 768px) {
+      display: grid;
+      width: 100%;
+      margin-bottom: 0;
+      // height: 400px;
+    }
+  }
+
+  .top-strength__card:nth-child(2n) {
+    flex-direction: row-reverse;
+  }
+  .top-strength__card-content {
+    flex: 1;
+    @media only screen and (max-width: 1000px) {
+      flex: 1;
+    }
+    @media only screen and (max-width: 768px) {
+      grid-row: 1;
+      grid-column: 1;
+      z-index: 2;
+      padding: 50px;
+      color: $c-background;
+    }
+  }
+  .top-strength__card-text {
+    margin-top: 30px;
+    line-height: 1.5;
+    @media only screen and (max-width: 1000px) {
+      margin-top: 15px;
+    }
+    @media only screen and (max-width: 768px) {
+      margin-top: 40px;
+    }
+  }
+  .top-strength__card-title {
+    font-size: fluid(18, 26, 320, 768);
+    font-weight: bold;
+    line-height: 1.5;
+    margin-top: 35px;
+    @media only screen and (max-width: 1000px) {
+      margin-top: 15px;
+      font-size: fluid(18, 22, 787, 1000);
+    }
+    @media only screen and (max-width: 768px) {
+      margin-top: 40px;
+    }
+  }
+  .top-strength__card-tag {
+    background-color: $c-accent;
+    color: $c-background;
+    font-size: 12px;
+    width: 90px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .top-strength__card-image {
+    @media only screen and (max-width: 768px) {
+      grid-row: 1;
+      grid-column: 1;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+  }
+  .top-strength__card-image::after {
+    @media only screen and (max-width: 768px) {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+  .top-strength__card-image img {
+    width: 350px;
+    height: 240px;
+    @media only screen and (max-width: 1000px) {
+      width: 280px;
+      height: 192px;
+    }
+    @media only screen and (max-width: 768px) {
+      grid-row: 1;
+      grid-column: 1;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .top-strength__cta {
+    margin-top: 30px;
+    margin-bottom: 39px;
+    height: 217px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    @media only screen and (max-width: 1000px) {
+    }
+    @media only screen and (max-width: 768px) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .top-strength__cta img {
+    grid-row: 1;
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .top-strength__cta-content {
+    grid-row: 1;
+    grid-column: 1;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .top-strength__cta-title {
+    margin-top: 61px;
+    font-size: fluid(18, 26, 320, 768);
+    font-weight: bold;
+    color: $c-background;
+    margin-bottom: 20px;
+  }
+  .only-mb {
+    display: none;
+    @media only screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+  .only-pc {
+    display: block;
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
+  }
