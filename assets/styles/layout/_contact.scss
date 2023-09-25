@@ -1,0 +1,112 @@
+
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr 700px 1fr;
+  }
+  .contact-container > * {
+    grid-column: 2;
+  }
+  .contact-container-desc {
+    margin-top: 58px;
+  }
+  form {
+    margin-top: 41px;
+    margin-bottom: 82px;
+  }
+  label {
+    display: block;
+    margin-top: 20px;
+  }
+  input {
+    margin: 0;
+  }
+  input:not([type="radio"]) {
+    margin-top: 10px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid;
+    font-size: 12px;
+    height: 50px;
+  }
+  input[type="radio"] {
+    margin-top: 10px;
+    margin-right: 10px;
+    appearance: auto;
+  }
+  label[for="policy"] {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+  }
+  input[type="checkbox"] {
+    width: 20px;
+    margin-right: 10px;
+    appearance: auto;
+  }
+  .radio {
+    margin-top: 24px;
+  }
+  .policy {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .policy a {
+    color: #f5a623;
+    text-decoration: underline;
+  }
+  .submit {
+    margin-top: 20px;
+    text-align: center;
+  }
+  input[type="submit"] {
+    width: 200px;
+    height: 50px;
+    background-color: #1b224c;
+    color: #fff;
+    border-radius: 5px;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid;
+  }
+  .radio p {
+    margin-top: 16px;
+  }
+
+  .my-radio {
+    position: relative;
+    display: block;
+    margin: 0.5em 0;
+    padding-left: 48px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .my-radio input {
+    display: none;
+  }
+  .radio-mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    border: solid 1px;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+  .radio-mark:after {
+    content: "";
+    position: absolute;
+    background: #2e80ff;
+    border-radius: 50%;
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    opacity: 0;
+  }
+  .my-radio input:checked + .radio-mark:after {
+    opacity: 1;
+  }
