@@ -1,0 +1,179 @@
+.l-footer {
+    width: 100%;
+    height: 230px;
+    background-color: $c-main;
+    color: $c-background;
+    display: grid;
+    grid-template-columns: 1fr 900px 1fr;
+    @media only screen and (max-width: 1000px) {
+      grid-template-columns: 1fr 90% 1fr;
+    }
+  }
+  .l-footer > * {
+    grid-column: 2;
+    @media only screen and (max-width: 768px) {
+      grid-column: 1 / 4;
+    }
+  }
+  .l-footer-container {
+    display: flex;
+    justify-content: space-between;
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+    }
+  }
+
+  .l-footer-nav ul {
+    margin-top: 49px;
+    display: grid;
+    list-style: none;
+    padding-inline: 0;
+    @media only screen and (max-width: 768px) {
+      font-size: fluid(12, 16, 320, 768);
+    }
+    @media only screen and (max-width: 500px) {
+      margin-top: 24px;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 100px 100px;
+      row-gap: 10px;
+    }
+  }
+  .l-footer-nav ul li {
+    grid-row: 1;
+    border-right: 1px solid $c-background;
+    padding-inline: 20px;
+    @media only screen and (max-width: 500px) {
+      padding-inline: 0;
+      grid-row: auto;
+      align-self: center;
+    }
+  }
+  .l-footer-nav ul li:first-child {
+    padding-left: 0;
+  }
+  .l-footer-nav ul li:last-child {
+    border-right: none;
+  }
+  .l-footer-nav ul li:nth-child(odd) {
+    border-right: 1px solid $c-background;
+  }
+  @media only screen and (max-width: 500px) {
+    .l-footer-nav ul li:first-child {
+      padding-left: 0;
+    }
+
+    .l-footer-nav ul li:nth-child(even) {
+      border-right: none;
+      justify-self: end;
+    }
+    .l-footer-nav ul li:nth-child(odd) {
+      border-right: none;
+      justify-self: start;
+    }
+  }
+  .l-footer-address {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    @media only screen and (max-width: 768px) {
+      margin-top: 49px;
+      display: grid;
+      grid-template-rows: 29px 29px;
+      grid-template-columns: 197px 150px;
+    }
+    @media only screen and (max-width: 500px) {
+      grid-template-rows: repeat(1fr);
+      grid-template-columns: 150px;
+      row-gap: 10px;
+    }
+  }
+  .l-footer-logo {
+    margin-top: 35px;
+    background: $c-background;
+    width: 197px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media only screen and (max-width: 768px) {
+      margin-top: 0;
+      grid-row: 1/-1;
+      grid-column: 1;
+    }
+    @media only screen and (max-width: 500px) {
+      width: 150px;
+      height: 50px;
+      grid-row: auto;
+      grid-column: auto;
+      justify-self: center;
+      align-self: center;
+    }
+  }
+  .l-footer-logo img {
+    width: 159px;
+    height: 31px;
+    @media only screen and (max-width: 500px) {
+      width: 120px;
+      height: 24px;
+    }
+  }
+  .l-footer-call {
+    margin-top: 27px;
+    @media only screen and (max-width: 768px) {
+      grid-row: 1;
+      grid-column: 2;
+    }
+    @media only screen and (max-width: 500px) {
+      grid-row: auto;
+      grid-column: auto;
+      justify-self: center;
+      align-self: center;
+    }
+  }
+  .l-footer-call img {
+    display: inline-block;
+    width: 10px;
+    height: 15px;
+    margin-right: 3px;
+    margin-bottom: 2px;
+  }
+  .l-footer-call span {
+    margin-top: 0.5em;
+  }
+  .l-footer-time {
+    margin-top: 13px;
+    font-size: 12px;
+    @media only screen and (max-width: 768px) {
+      grid-row: 2;
+      grid-column: 2;
+    }
+    @media only screen and (max-width: 500px) {
+      grid-row: auto;
+      grid-column: auto;
+      justify-self: center;
+      align-self: center;
+    }
+  }
+  .copywrite {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 900px 1fr;
+    padding: 20px 0;
+
+    @media only screen and (max-width: 1000px) {
+      grid-template-columns: 1fr 90% 1fr;
+    }
+  }
+  .copywrite > * {
+    grid-column: 2;
+  }
+  .copywrite-container {
+    display: grid;
+    justify-content: end;
+    @media only screen and (max-width: 768px) {
+      justify-content: center;
+    }
+  }
