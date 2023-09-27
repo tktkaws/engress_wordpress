@@ -1,32 +1,45 @@
 .l-bread-crumb {
-    display: grid;
-    grid-template-columns: 1fr 900px 1fr;
-    @media only screen and (max-width: 1000px) {
-      grid-template-columns: 1fr 90% 1fr;
-    }
+  display: grid;
+  grid-template-columns: 1fr 900px 1fr;
+  align-items: center;
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns: 1fr 90% 1fr;
   }
-  .l-bread-crumb > * {
-    grid-column: 2;
-  }
-  .l-bread-crumb {
-    background: $c-sub;
-    height: 50px;
-    padding: 10px 0;
-  }
-  .l-bread-crumb ul {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    list-style: none;
-  }
-  .l-bread-crumb ul li {
-    margin: 0 10px;
-    font-size: 14px;
-  }
-  .l-bread-crumb ul li::after {
-    content: "/";
-    margin-left: 10px;
-  }
-  .l-bread-crumb ul li:last-child::after {
-    content: "";
-  }
+}
+.l-bread-crumb > * {
+  grid-column: 2;
+}
+.l-bread-crumb {
+  background: $c-sub;
+  height: 50px;
+  padding: 10px 0;
+}
+.l-bread-crumb-inner a {
+  text-decoration: underline;
+}
+
+.breadcrumbs span[property="name"] {
+  display: inline-block;
+  padding: 0;
+  margin-top: -3px;
+  vertical-align: middle;
+  max-width: 400px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.breadcrumbs span[property="name"]:hover {
+  max-width: none;
+}
+
+.l-bread-crumb .current-item {
+  display: inline-block;
+  padding: 0;
+  margin-top: -3px;
+  vertical-align: middle;
+  max-width: 400px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
