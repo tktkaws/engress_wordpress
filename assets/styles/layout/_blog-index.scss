@@ -1,43 +1,26 @@
 .blog-index {
-    display: grid;
-    grid-template-columns: 1fr 900px 1fr;
-    @media only screen and (max-width: 1000px) {
-      grid-template-columns: 1fr 90% 1fr;
-    }
+  display: grid;
+  grid-template-columns: 1fr 900px 1fr;
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns: 1fr 90% 1fr;
   }
-  .blog-index > * {
-    grid-column: 2;
+}
+.blog-index > * {
+  grid-column: 2;
+}
+.blog-index-title {
+  font-size: fluid(18, 36, 320, 768);
+  font-weight: bold;
+  margin-top: 58px;
+  text-align: center;
+}
+.blog-index-list {
+  margin-top: 60px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 93px;
+  @media only screen and (max-width: 1000px) {
+    gap: 40px;
   }
-  .blog-index-title {
-    font-size: fluid(18, 36, 320, 768);
-    font-weight: bold;
-    margin-top: 58px;
-    text-align: center;
-  }
-  .blog-index-list {
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-    gap: 93px;
-    @media only screen and (max-width: 1000px) {
-      gap: 40px;
-    }
-  }
-
-  .pagenation ul {
-    display: flex;
-    justify-content: center;
-    margin-top: 80px;
-    gap: 16px;
-    padding-bottom: 80px;
-  }
-  .pagenationItem {
-    padding: 16px;
-    border: 1px solid;
-  }
-  .pagenationItemActive {
-    padding: 16px;
-    border: 1px solid;
-    background: #1b224c;
-    color: white;
-  }
+}
