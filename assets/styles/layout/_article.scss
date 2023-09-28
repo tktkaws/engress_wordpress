@@ -5,13 +5,23 @@ article {
 article > * + * {
   margin-top: 30px;
 }
+article .category {
+  display: inline-block;
+  background-color: $c-main;
+  color: $c-background;
+  padding: 9px 25px;
+}
+article .category a {
+  color: $c-background;
+  text-decoration: none;
+}
 article h1 {
   font-size: fluid(20, 28, 320, 767);
   font-weight: bold;
 }
 
 article .caption {
-  width: min(100%, 400px);
+  width: max(100%, 400px);
   aspect-ratio: 400/250;
 }
 article .caption img {
@@ -50,12 +60,12 @@ article blockquote::before {
   font-size: 90px;
   color: $c-sub-quate;
 }
-article .list-item {
+article ul li {
   list-style: none;
   padding-left: 36px;
   position: relative;
 }
-article .list-item::before {
+article ul li::before {
   content: "";
   display: block;
   position: absolute;
@@ -68,7 +78,7 @@ article .list-item::before {
   height: 11px;
   border-radius: 50%;
 }
-article .link {
+article p a {
   color: $c-accent;
   text-decoration: underline;
 }
