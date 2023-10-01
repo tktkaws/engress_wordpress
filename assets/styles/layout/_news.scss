@@ -8,6 +8,7 @@
 .news-post > * {
   grid-column: 2;
 }
-.news-date {
-  text-align: right;
+.news-date-wrapper {
+  display: flex;
+  justify-content: flex-end;
 }
