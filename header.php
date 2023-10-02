@@ -9,8 +9,7 @@
 <header class="l-header">
     <h1 class="l-header-logo">
         <a href="/index.html">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/logo@2x.png"
-                class="astro-3EF6KSR2">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/logo@2x.png" class="astro-3EF6KSR2">
         </a>
     </h1>
     <nav class="l-header-gnav">
@@ -19,10 +18,10 @@
                 <a href="/">ホーム</a>
             </li>
             <li>
-                <a href="/news-index">お知らせ</a>
+                <a href="/news">お知らせ</a>
             </li>
             <li>
-                <a href="/blog-index">ブログ</a>
+                <a href="/post">ブログ</a>
             </li>
             <li>
                 <a href="/price">コース・料金</a>
@@ -37,10 +36,10 @@
                 </p>
             </address>
             <button class="c-button --accent">
-                <a href="./contact" class="astro-VNZLVQNM">資料請求</a>
+                <a href="/contact" class="astro-VNZLVQNM">資料請求</a>
             </button>
             <button class="c-button --main">
-                <a href="./contact" class="astro-VNZLVQNM">お問い合わせ</a>
+                <a href="/contact" class="astro-VNZLVQNM">お問い合わせ</a>
             </button>
         </div>
     </nav>

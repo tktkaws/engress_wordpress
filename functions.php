@@ -6,23 +6,21 @@
  * @package WordPress
  * @subpackage themrishvite
  */
-function my_static_breadcrumb_adder($breadcrumb_trail)
+
+function bcn_add($bcnObj)
 {
-
-	if (is_post_type_archive('post')) { // デフォルトの投稿一覧ページの場合
-
-		$item = new bcn_breadcrumb('ブログ', null, array('post'));
-	} elseif (get_post_type() === 'post') { // デフォルトの投稿ページの場合
-
-		$item = new bcn_breadcrumb('ブログ', null, array('post'), home_url('post/'), null, true);
+	// デフォルト投稿のアーカイブかどうか
+	if (is_post_type_archive('post')) {
+		// 新規のtrailオブジェクトを末尾に追加する
+		$bcnObj->add(new bcn_breadcrumb('ブログ', null, array('archive', 'post-clumn-archive', 'current-item')));
+		// trailオブジェクト0とtrailオブジェクト1の中身を入れ替える
+		$trail_tmp = clone $bcnObj->trail[1];
+		$bcnObj->trail[1] = clone $bcnObj->trail[0];
+		$bcnObj->trail[0] = $trail_tmp;
 	}
-
-	$stuck = array_pop($breadcrumb_trail->breadcrumbs); // HOME 一時退避
-	$breadcrumb_trail->breadcrumbs[] = $item; // 任意の名前 追加
-	$breadcrumb_trail->breadcrumbs[] = $stuck; // HOME 戻す
-
+	return $bcnObj;
 }
-add_action('bcn_after_fill', 'my_static_breadcrumb_adder');
+add_action('bcn_after_fill', 'bcn_add');
 
 function post_has_archive($args, $post_type)
 {
