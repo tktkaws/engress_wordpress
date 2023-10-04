@@ -1,0 +1,19 @@
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 700px 1fr;
+}
+.contact-container > * {
+  grid-column: 2;
+}
+
+.thanks-desc {
+  margin-top: 83px;
+  text-align: center;
+  line-height: 1.6;
+}
+.thanks-link {
+  text-decoration: underline;
+  margin-top: 83px;
+  text-align: center;
+  margin-bottom: 80px;
+}
