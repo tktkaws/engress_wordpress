@@ -138,6 +138,7 @@ textarea {
 
   .wpcf7-list-item {
     position: relative;
+    margin-left: 0;
   }
   .wpcf7-list-item input {
     display: none;
@@ -147,7 +148,7 @@ textarea {
     position: relative;
   }
   span.wpcf7-list-item-label {
-    margin-left: 36px;
+    padding-left: 36px;
   }
   .wpcf7-list-item-label .wpcf7-list-item-label::before {
     content: "";
@@ -192,7 +193,7 @@ textarea {
     background: #2e80ff;
     background: $c-main;
     border-radius: 50%;
-    top: 3px;
+    top: 4px;
     bottom: 0px;
     left: 3px;
     right: 2px;
@@ -207,4 +208,53 @@ textarea {
   }
 }
 
-// todo checbox 独自のcss
+.policy {
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wpcf7-list-item-label {
+    margin-top: 10px;
+    // 独自のcss
+    // position: relative;
+    // padding-left: 36px;
+  }
+  // .wpcf7-checkbox input[type="checkbox"] {
+  //   display: none;
+  // }
+
+  // .wpcf7-list-item-label {
+  //   position: relative;
+  //   padding-left: 36px;
+  // }
+  // .wpcf7-list-item-label::before {
+  //   position: relative;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   height: 22px;
+  //   width: 22px;
+  //   border: solid 1px;
+  //   border-radius: 50%;
+  //   box-sizing: border-box;
+  // }
+
+  // .wpcf7-checkbox input[type="checkbox"] + .wpcf7-list-item-label::after {
+  //   position: absolute;
+  //   background: #2e80ff;
+  //   background: $c-main;
+  //   border-radius: 50%;
+  //   top: 3px;
+  //   bottom: 0px;
+  //   left: 3px;
+  //   right: 2px;
+  //   width: 16px;
+  //   opacity: 0;
+  // }
+  // .wpcf7-checkbox
+  //   input[type="checkbox"]:checked
+  //   + .wpcf7-list-item-label::after {
+  //   opacity: 1;
+  // }
+}
