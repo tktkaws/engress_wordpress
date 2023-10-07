@@ -1,10 +1,11 @@
 <?php get_header(); ?>
 <main>
-    <?php get_template_part('template/bread-crumb') ?>
+
     <section class="l-hero">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/other/plan.png" />
         <h2 class="l-hero-title">コース・料金</h2>
     </section>
+    <?php get_template_part('template/bread-crumb') ?>
     <section class="price-structure">
         <h2 class="price-structure-title">料金体系</h2>
         <ul class="price-structure-list">
