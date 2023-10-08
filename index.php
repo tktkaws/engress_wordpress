@@ -123,40 +123,32 @@
     </section>
     <section class="top-success">
         <h2 class="top-success-title">TOEFL成功事例</h2>
+
         <ul>
-            <li class="top-success__card --first">
-                <div class="top-success__card-title">
-                    TOEFL iBT 100点を突破してコロンビア大学大学院に進学できました!
-                </div>
-                <div class="top-success__white">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/model01.png" alt="" />
-                </div>
-                <p class="top-success__card-tag">会社員</p>
-                <p class="top-success__card-name">T.Fujiyamaさん</p>
-                <p class="top-success__card-caption">3ヶ月でTOEFL80→108点</p>
-            </li>
-            <li class="top-success__card --second">
-                <div class="top-success__card-title">
-                    半年でTOEFL 40点→100点を達成!コロンビア大学大学院に合格
-                </div>
-                <div class="top-success__white">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/model02.png" alt="" />
-                </div>
-                <p class="top-success__card-tag">大学生</p>
-                <p class="top-success__card-name">Y.Takiyamaさん</p>
-                <p class="top-success__card-caption">6ヶ月でTOEFL40→100点</p>
-            </li>
-            <li class="top-success__card --third">
-                <div class="top-success__card-title">
-                    早稲田大学 国際教養学部AO入試合格!TOEFL iBT 109点
-                </div>
-                <div class="top-success__white">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/model03.png" alt="" />
-                </div>
-                <p class="top-success__card-tag">高校生</p>
-                <p class="top-success__card-name">M.Yamadaさん</p>
-                <p class="top-success__card-caption">5ヶ月でTOEFL68→109点</p>
-            </li>
+            <?php
+            global $post;
+            $args = array(
+                'posts_per_page' => 3,
+                'post_type' => 'examples',
+                "order" => "ASC"
+            );
+            $myposts = get_posts($args);
+            foreach ($myposts as $post) : setup_postdata($post); ?>
+                <li class="top-success__card --first">
+                    <div class="top-success__card-title">
+                        <?php the_title(); ?>
+                    </div>
+                    <div class="top-success__white">
+                        <img src="<?php the_field('image'); ?>">
+                    </div>
+                    <p class="top-success__card-tag"><?php the_field('tag'); ?></p>
+                    <p class="top-success__card-name"><?php the_field('name'); ?></p>
+                    <p class="top-success__card-caption"><?php the_field('desc'); ?></p>
+                </li>
+            <?php
+            endforeach;
+            wp_reset_postdata();
+            ?>
         </ul>
     </section>
     <section class="top-process">
