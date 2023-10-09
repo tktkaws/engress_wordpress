@@ -23,6 +23,43 @@
     <section class="price-list">
         <h2 class="price-list-title">料金表</h2>
         <ul>
+            <?php
+            global $post;
+            $args = array(
+                'posts_per_page' => 4,
+                'post_type' => 'plice_list',
+                "order" => "ASC"
+            );
+            console_log($args);
+            $myposts = get_posts($args);
+            foreach ($myposts as $post) : setup_postdata($post); ?>
+            <li class="price-list__card">
+                <h3 class="price-list__card-title">
+                    <span>
+                        <?php the_title(); ?>
+                    </span>
+                </h3>
+                <div class="price-list__card-body">
+                    <p class="price-list__card-price"><?php the_field('price'); ?></p>
+                    <div class="price-list__card-desc">
+                        <?php the_content(); ?>
+                    </div>
+
+                </div>
+            </li>
+            <?php
+            endforeach;
+            wp_reset_postdata();
+            ?>
+
+
+        </ul>
+    </section>
+    <section class="price-list">
+        <h2 class="price-list-title">料金表</h2>
+        <ul>
+
+
             <li class="price-list__card">
                 <h3 class="price-list__card-title">
                     <span>基礎プラン</span>
