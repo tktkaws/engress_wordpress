@@ -20,46 +20,65 @@
             Engressのカリキュラムは完全オーダーメイドのため、カリキュラム内のサポート内容によって料金が変動します。おすすめのスタンダードプランでは、進学先に合わせたサポートまで包括的に行います。
         </p>
     </section>
+    <!-- <section>
+        <div class="js-scrollable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Col1</th>
+                        <th>Col2</th>
+                        <th>Col3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lorem ipsum dolor sit.</td>
+                        <td>Lorem ipsum dolor sit.</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, magnam.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section> -->
+
     <section class="price-list">
         <h2 class="price-list-title">料金表</h2>
-        <ul>
-            <?php
-            global $post;
-            $args = array(
-                'posts_per_page' => 4,
-                'post_type' => 'plice_list',
-                "order" => "ASC"
-            );
-            console_log($args);
-            $myposts = get_posts($args);
-            foreach ($myposts as $post) : setup_postdata($post); ?>
-            <li class="price-list__card">
-                <h3 class="price-list__card-title">
-                    <span>
-                        <?php the_title(); ?>
-                    </span>
-                </h3>
-                <div class="price-list__card-body">
-                    <p class="price-list__card-price"><?php the_field('price'); ?></p>
-                    <div class="price-list__card-desc">
-                        <?php the_content(); ?>
-                    </div>
+        <div class="js-scrollable">
+            <ul class="price-list__list">
+                <?php
+                global $post;
+                $args = array(
+                    'posts_per_page' => 4,
+                    'post_type' => 'plice_list',
+                    "order" => "ASC"
+                );
+                console_log($args);
+                $myposts = get_posts($args);
+                foreach ($myposts as $post) : setup_postdata($post); ?>
+                    <li class="price-list__card">
+                        <h3 class="price-list__card-title">
+                            <span>
+                                <?php the_title(); ?>
+                            </span>
+                        </h3>
+                        <div class="price-list__card-body">
+                            <p class="price-list__card-price"><?php the_field('price'); ?></p>
+                            <div class="price-list__card-desc">
+                                <?php the_content(); ?>
+                            </div>
 
-                </div>
-            </li>
-            <?php
-            endforeach;
-            wp_reset_postdata();
-            ?>
-
-
-        </ul>
+                        </div>
+                    </li>
+                <?php
+                endforeach;
+                wp_reset_postdata();
+                ?>
+            </ul>
+        </div>
     </section>
-    <section class="price-list">
+    <!-- <section class="price-list">
         <h2 class="price-list-title">料金表</h2>
         <ul>
-
-
             <li class="price-list__card">
                 <h3 class="price-list__card-title">
                     <span>基礎プラン</span>
@@ -107,7 +126,7 @@
                 </div>
             </li>
         </ul>
-    </section>
+    </section> -->
     <?php get_template_part('template/cta') ?>
 </main>
 
