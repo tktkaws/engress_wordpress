@@ -134,17 +134,17 @@
             );
             $myposts = get_posts($args);
             foreach ($myposts as $post) : setup_postdata($post); ?>
-                <li class="top-success__card --first">
-                    <div class="top-success__card-title">
-                        <?php the_title(); ?>
-                    </div>
-                    <div class="top-success__white">
-                        <img src="<?php the_field('image'); ?>">
-                    </div>
-                    <p class="top-success__card-tag"><?php the_field('tag'); ?></p>
-                    <p class="top-success__card-name"><?php the_field('name'); ?></p>
-                    <p class="top-success__card-caption"><?php the_field('desc'); ?></p>
-                </li>
+            <li class="top-success__card --first">
+                <div class="top-success__card-title">
+                    <?php the_title(); ?>
+                </div>
+                <div class="top-success__white">
+                    <img src="<?php the_field('image'); ?>">
+                </div>
+                <p class="top-success__card-tag"><?php the_field('tag'); ?></p>
+                <p class="top-success__card-name"><?php the_field('name'); ?></p>
+                <p class="top-success__card-caption"><?php the_field('desc'); ?></p>
+            </li>
             <?php
             endforeach;
             wp_reset_postdata();
@@ -248,9 +248,11 @@
             <div class="top-news-blog-container">
                 <h2 class="top-news-title">ブログ</h2>
                 <ul class="top-news__blog-list">
+
                     <li class="top-news__blog-card">
                         <div class="top-news__blog-card-image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/sample01.png" alt="" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/sample01.png"
+                                alt="" />
                             <p class="top-news__blog-card-category">カテゴリー</p>
                         </div>
                         <p class="top-news__blog-card-title">Engress説明会in大阪の模様をお伝えします</p>
@@ -260,7 +262,8 @@
                     </li>
                     <li class="top-news__blog-card">
                         <div class="top-news__blog-card-image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/sample02.png" alt="" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/sample02.png"
+                                alt="" />
                             <p class="top-news__blog-card-category">カテゴリー</p>
                         </div>
                         <p class="top-news__blog-card-title">Engressもくもく会でみんなでTOEFL学習をしませんか？</p>
@@ -270,7 +273,8 @@
                     </li>
                     <li class="top-news__blog-card">
                         <div class="top-news__blog-card-image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/sample03.png" alt="" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/sample03.png"
+                                alt="" />
                             <p class="top-news__blog-card-category">カテゴリー</p>
                         </div>
                         <p class="top-news__blog-card-title">TOEFL学習にはコーチング学習が最強である話</p>
@@ -283,18 +287,26 @@
             <div class="top-news-news-container">
                 <h2 class="top-news-title">お知らせ</h2>
                 <ul class="top-news-news-list">
+                    <?php
+                    global $post;
+                    $args = array(
+                        'posts_per_page' => 3,
+                        'post_type' => 'news',
+                        "order" => "ASC"
+                    );
+                    $myposts = get_posts($args);
+                    foreach ($myposts as $post) : setup_postdata($post); ?>
                     <li class="top-news__news-card">
-                        <p class="top-news__news-card-title">2021年のスケジュールについて</p>
-                        <time class="top-news__news-card-date">2020-12-01</time>
+                        <a href="<?php the_permalink(); ?>">
+                            <p class="top-news__news-card-title"><?php the_title(); ?></p>
+                        </a>
+                        <time class="top-news__news-card-date"
+                            datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y-m-d'); ?></time>
                     </li>
-                    <li class="top-news__news-card">
-                        <p class="top-news__news-card-title">11月休校日のお知らせ</p>
-                        <time class="top-news__news-card-date">2019-11-02</time>
-                    </li>
-                    <li class="top-news__news-card">
-                        <p class="top-news__news-card-title">10月休校日のお知らせ</p>
-                        <time class="top-news__news-card-date">2020-10-01</time>
-                    </li>
+                    <?php
+                    endforeach;
+                    wp_reset_postdata();
+                    ?>
                 </ul>
             </div>
         </div>
