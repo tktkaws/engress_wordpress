@@ -248,40 +248,63 @@
             <div class="top-news-blog-container">
                 <h2 class="top-news-title">ブログ</h2>
                 <ul class="top-news__blog-list">
+                    <?php
+                    $args = array(
+                        'posts_per_page'   => 4,
+                        'order'            => 'DESC',
+                    );
+                    $the_query = new WP_Query($args);
+                    if ($the_query->have_posts()) :
+                        while ($the_query->have_posts()) :
+                            $the_query->the_post();
+                    ?>
 
                     <li class="top-news__blog-card">
                         <div class="top-news__blog-card-image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/sample01.png"
-                                alt="" />
-                            <p class="top-news__blog-card-category">カテゴリー</p>
+                            <?php if (has_post_thumbnail()) : ?>
+                            <?php the_post_thumbnail(); ?>
+                            <?php else : ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/logo@2x.png"
+                                alt="">
+                            <?php endif; ?>
+                            <p class="top-news__blog-card-category">
+                                <?php
+                                        $categories = get_the_category();
+                                        console_log($categories);
+                                        $category = $categories[0];
+                                        ?>
+                                <a href="<?php echo get_category_link($category->term_id) ?>">
+                                    <span>
+                                        <?php echo $category->name; ?>
+                                    </span>
+                                </a>
+                            </p>
                         </div>
-                        <p class="top-news__blog-card-title">Engress説明会in大阪の模様をお伝えします</p>
-                        <p class="top-news__blog-card-date">
-                            <time>2020-12-27</time>
-                        </p>
+                        <a class="blog-link" href="<?php the_permalink(); ?>">
+                            <p class="top-news__blog-card-title">
+                                <?php
+                                        if (mb_strlen($post->post_title) > 30) {
+                                            $title = mb_substr($post->post_title, 0, 30);
+                                            echo $title . '...';
+                                        } else {
+                                            echo $post->post_title;
+                                        }
+                                        ?>
+                            </p>
+                        </a>
+                        <time class="top-news__blog-card-date"
+                            datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y-m-d'); ?></time>
+
                     </li>
-                    <li class="top-news__blog-card">
-                        <div class="top-news__blog-card-image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/sample02.png"
-                                alt="" />
-                            <p class="top-news__blog-card-category">カテゴリー</p>
-                        </div>
-                        <p class="top-news__blog-card-title">Engressもくもく会でみんなでTOEFL学習をしませんか？</p>
-                        <p class="top-news__blog-card-date">
-                            <time>2020-12-01</time>
-                        </p>
-                    </li>
-                    <li class="top-news__blog-card">
-                        <div class="top-news__blog-card-image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/sample03.png"
-                                alt="" />
-                            <p class="top-news__blog-card-category">カテゴリー</p>
-                        </div>
-                        <p class="top-news__blog-card-title">TOEFL学習にはコーチング学習が最強である話</p>
-                        <p class="top-news__blog-card-date">
-                            <time>2020-11-20</time>
-                        </p>
-                    </li>
+                    <?php
+                        endwhile;
+
+                    else :
+                        ?>
+                    <?php
+                    endif;
+                    wp_reset_postdata();
+                    ?>
                 </ul>
             </div>
             <div class="top-news-news-container">
