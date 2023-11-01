@@ -18,6 +18,7 @@ ul.page-numbers {
 }
 .page-numbers li:has(.dots) {
   padding: 16px;
+  border: none;
 }
 .page-numbers li a {
   text-align: center;
