@@ -53,10 +53,10 @@ add_filter('excerpt_more', 'new_excerpt_more');
 
 
 // admin_bar
-// add_filter('show_admin_bar', '__return_false');
+add_filter('show_admin_bar', '__return_false');
 
 //develop mode config
-define("IS_VITE_DEVELOPMENT", true);
+define("IS_VITE_DEVELOPMENT", false);
 
 //define
 define('DIST_DEF', 'dist');
