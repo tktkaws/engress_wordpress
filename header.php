@@ -9,7 +9,7 @@
 </head>
 <header class="l-header">
     <h1 class="l-header-logo">
-        <a href="/index.html">
+        <a href="/">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/logo@2x.png" class="astro-3EF6KSR2">
         </a>
     </h1>

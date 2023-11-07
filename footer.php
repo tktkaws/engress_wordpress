@@ -5,13 +5,13 @@
         <nav class="l-footer-nav">
             <ul>
                 <li>
-                    <a href="/index.html">ホーム</a>
+                    <a href="/">ホーム</a>
                 </li>
                 <li>
-                    <a href="/newsIndex.html">お知らせ</a>
+                    <a href="/news">お知らせ</a>
                 </li>
                 <li>
-                    <a href="/blogIndex.html">ブログ</a>
+                    <a href="/post">ブログ</a>
                 </li>
                 <li>
                     <a href="/price">コース・料金</a>
