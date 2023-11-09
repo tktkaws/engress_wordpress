@@ -10,9 +10,9 @@
                 コーチング型TOEFLスクール
             </p>
             <button class="c-button-radius --hero">
-                <a href="./contact.html" class="astro-EMKAGK7Q">資料請求</a>
+                <a href="./contact" class="astro-EMKAGK7Q">資料請求</a>
             </button>
-            <p class="top-hero-contact"><a href="/contact.html"> お問い合わせ</a></p>
+            <p class="top-hero-contact"><a href="/contact"> お問い合わせ</a></p>
         </div>
     </section>
     <section class="top-about">
@@ -116,7 +116,7 @@
             <div class="top-strength__cta-content">
                 <p class="top-strength__cta-title">Engressの料金プランはこちら</p>
                 <button class="c-button-radius --strength">
-                    <a href="./contact.html">料金を見てみる</a>
+                    <a href="./price">料金を見てみる</a>
                 </button>
             </div>
         </div>
@@ -270,7 +270,6 @@
                             <p class="top-news__blog-card-category">
                                 <?php
                                         $categories = get_the_category();
-                                        console_log($categories);
                                         $category = $categories[0];
                                         ?>
                                 <a href="<?php echo get_category_link($category->term_id) ?>">

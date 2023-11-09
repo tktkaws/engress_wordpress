@@ -7,23 +7,23 @@
     <div class="container">
         <ul class="menu">
             <li>
-                <a href="/index.html">ホーム</a>
+                <a href="/">ホーム</a>
             </li>
             <li>
-                <a href="/newsIndex.html">お知らせ</a>
+                <a href="/news">お知らせ</a>
             </li>
             <li>
-                <a href="/blogIndex.html">ブログ</a>
+                <a href="/post">ブログ</a>
             </li>
             <li>
-                <a href="/price.html">コース・料金</a>
+                <a href="/price">コース・料金</a>
             </li>
         </ul>
         <button class="c-button --accent">
-            <a href="./contact.html" class="astro-VNZLVQNM">資料請求</a>
+            <a href="/contact" class="astro-VNZLVQNM">資料請求</a>
         </button>
         <button class="c-button --main">
-            <a href="./contact.html" class="astro-VNZLVQNM">お問い合わせ</a>
+            <a href="/contact" class="astro-VNZLVQNM">お問い合わせ</a>
         </button>
         <h1 class="logo">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/logo@2x.png" />

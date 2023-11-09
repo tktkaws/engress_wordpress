@@ -4,9 +4,9 @@
         <div class="cta__bg-image-content">
             <p class="cta__bg-image-title">まずは無料で資料請求から</p>
             <button class="c-button-radius --cta">
-                <a href="./contact.html" class="astro-EMKAGK7Q">資料請求</a>
+                <a href="./contact" class="astro-EMKAGK7Q">資料請求</a>
             </button>
-            <p class="cta__bg-image-contact"><a href="contact"> お問い合わせ</a></p>
+            <p class="cta__bg-image-contact"><a href="./contact"> お問い合わせ</a></p>
         </div>
     </div>
     <address class="cta__only-text">
