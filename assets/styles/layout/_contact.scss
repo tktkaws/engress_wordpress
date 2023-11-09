@@ -1,16 +1,23 @@
 .contact-container {
   display: grid;
   grid-template-columns: 1fr 700px 1fr;
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr 90% 1fr;
+  }
 }
 .contact-container > * {
   grid-column: 2;
 }
 .contact-container-desc {
   margin-top: 58px;
+  line-height: 1.6;
 }
 form {
   margin-top: 41px;
   margin-bottom: 82px;
+}
+form p {
+  line-height: 1.6;
 }
 label {
   display: block;
@@ -48,6 +55,9 @@ input[type="checkbox"] {
 .policy {
   margin-top: 20px;
   text-align: center;
+  @media only screen and (max-width: 375px) {
+    text-align: left;
+  }
 }
 .policy a {
   color: #f5a623;
@@ -64,6 +74,8 @@ input[type="checkbox"] {
 input[type="submit"] {
   width: 200px;
   height: 50px;
+  font-size: 16px;
+  padding: 0;
   background-color: #1b224c;
   color: #fff;
   border-radius: 5px;
@@ -146,6 +158,7 @@ textarea {
 
   .wpcf7-list-item label {
     position: relative;
+    line-height: 1;
   }
   span.wpcf7-list-item-label {
     padding-left: 36px;
@@ -193,11 +206,12 @@ textarea {
     background: #2e80ff;
     background: $c-main;
     border-radius: 50%;
-    top: 4px;
+    top: 3px;
     bottom: 0px;
     left: 3px;
     right: 2px;
     width: 16px;
+    height: 16px;
     opacity: 0;
   }
 
@@ -220,41 +234,7 @@ textarea {
     // position: relative;
     // padding-left: 36px;
   }
-  // .wpcf7-checkbox input[type="checkbox"] {
-  //   display: none;
-  // }
-
-  // .wpcf7-list-item-label {
-  //   position: relative;
-  //   padding-left: 36px;
-  // }
-  // .wpcf7-list-item-label::before {
-  //   position: relative;
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   height: 22px;
-  //   width: 22px;
-  //   border: solid 1px;
-  //   border-radius: 50%;
-  //   box-sizing: border-box;
-  // }
-
-  // .wpcf7-checkbox input[type="checkbox"] + .wpcf7-list-item-label::after {
-  //   position: absolute;
-  //   background: #2e80ff;
-  //   background: $c-main;
-  //   border-radius: 50%;
-  //   top: 3px;
-  //   bottom: 0px;
-  //   left: 3px;
-  //   right: 2px;
-  //   width: 16px;
-  //   opacity: 0;
-  // }
-  // .wpcf7-checkbox
-  //   input[type="checkbox"]:checked
-  //   + .wpcf7-list-item-label::after {
-  //   opacity: 1;
-  // }
+}
+.wpcf7-list-item.last {
+  margin: 0;
 }
