@@ -1,48 +1,49 @@
 .top-hero {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 476px;
-    @media only screen and (max-width: 768px) {
-      // grid-template-rows: 400px;
-    }
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 476px;
+  @media only screen and (max-width: 768px) {
+    // grid-template-rows: 400px;
   }
-  .top-hero img {
-    grid-row: 1;
-    grid-column: 1;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    object-fit: cover;
-    @media only screen and (max-width: 768px) {
-      object-fit: none;
-      object-position: 73% 100%;
-    }
+}
+.top-hero img {
+  grid-row: 1;
+  grid-column: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  object-fit: cover;
+  @media only screen and (max-width: 768px) {
+    object-fit: none;
+    object-position: 73% 100%;
   }
-  .top-hero-content {
-    grid-row: 1;
-    grid-column: 1;
-    z-index: 1;
-    position: relative;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: $c-background;
-    margin-top: 116px;
-    font-size: 18px;
-    font-size: fluid(12, 18, 320, 768);
-  }
-  .top-hero-title {
-    font-size: fluid(24, 48, 320, 768);
-    font-weight: bold;
-  }
-  .top-hero-desc {
-    margin-top: 28px;
-    line-height: 1.8;
-    margin-bottom: 40px;
-  }
-  .top-hero-contact {
-    margin-top: 22px;
-    font-size: fluid(12, 16, 320, 768);
-    text-decoration: underline;
-  }
+}
+.top-hero-content {
+  grid-row: 1;
+  grid-column: 1;
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $c-background;
+  margin-top: 116px;
+  font-size: 18px;
+  font-size: fluid(12, 18, 320, 768);
+}
+.top-hero-title {
+  font-size: fluid(24, 48, 320, 768);
+  font-weight: bold;
+  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+.top-hero-desc {
+  margin-top: 28px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+.top-hero-contact {
+  margin-top: 22px;
+  font-size: fluid(12, 16, 320, 768);
+  text-decoration: underline;
+}
