@@ -264,8 +264,8 @@
                             <?php if (has_post_thumbnail()) : ?>
                             <?php the_post_thumbnail(); ?>
                             <?php else : ?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/logo@2x.png"
-                                alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/other/dummy.png"
+                                alt="代替画像" class="alt-image">
                             <?php endif; ?>
                             <p class="top-news__blog-card-category">
                                 <?php

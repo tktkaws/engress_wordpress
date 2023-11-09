@@ -12,29 +12,28 @@
             if (have_posts()) :
                 while (have_posts()) : the_post();
             ?>
-            <li class="blog-card">
-                <div class="blog-card-image">
-                    <?php if (has_post_thumbnail()) : ?>
-                    <?php the_post_thumbnail(); ?>
-                    <?php else : ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/logo@2x.png" alt="">
-                    <?php endif; ?>
-                    <p class="blog-card-tag">
-                        <?php
+                    <li class="blog-card">
+                        <div class="blog-card-image">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <?php the_post_thumbnail(); ?>
+                            <?php else : ?>
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/other/dummy.png" alt="代替画像" class="alt-image">
+                            <?php endif; ?>
+                            <p class="blog-card-tag">
+                                <?php
                                 $categories = get_the_category();
-                                console_log($categories);
                                 $category = $categories[0];
                                 ?>
-                        <a href="<?php echo get_category_link($category->term_id) ?>">
-                            <span>
-                                <?php echo $category->name; ?>
-                            </span>
-                        </a>
-                    </p>
-                </div>
-                <a class="blog-link" href="<?php the_permalink(); ?>">
-                    <p class="blog-card-title">
-                        <?php
+                                <a href="<?php echo get_category_link($category->term_id) ?>">
+                                    <span>
+                                        <?php echo $category->name; ?>
+                                    </span>
+                                </a>
+                            </p>
+                        </div>
+                        <a class="blog-link" href="<?php the_permalink(); ?>">
+                            <p class="blog-card-title">
+                                <?php
                                 if (mb_strlen($post->post_title) > 40) {
                                     $title = mb_substr($post->post_title, 0, 40);
                                     echo $title . '...';
@@ -42,13 +41,13 @@
                                     echo $post->post_title;
                                 }
                                 ?>
-                    </p>
-                </a>
-                <time class="blog-card-date" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y-m-d'); ?></time>
-                <p class="blog-card-desc">
-                    <?php echo get_the_excerpt(); ?>
-                </p>
-            </li>
+                            </p>
+                        </a>
+                        <time class="blog-card-date" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y-m-d'); ?></time>
+                        <p class="blog-card-desc">
+                            <?php echo get_the_excerpt(); ?>
+                        </p>
+                    </li>
             <?php endwhile;
             endif; ?>
         </ul>
