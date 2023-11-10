@@ -17,7 +17,14 @@
                 <time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y-m-d'); ?></time>
                 <a class="news-link" href="<?php the_permalink(); ?>">
                     <p class="news-title">
-                        <?php the_title(); ?>
+                        <?php
+                                    if (mb_strlen($post->post_title) > 40) {
+                                        $title = mb_substr($post->post_title, 0, 40);
+                                        echo $title . '...';
+                                    } else {
+                                        echo $post->post_title;
+                                    }
+                                    ?>
                     </p>
                 </a>
             </li>

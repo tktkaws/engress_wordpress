@@ -314,13 +314,23 @@
                     $args = array(
                         'posts_per_page' => 3,
                         'post_type' => 'news',
-                        "order" => "ASC"
+                        "order" => "DESC"
                     );
                     $myposts = get_posts($args);
                     foreach ($myposts as $post) : setup_postdata($post); ?>
                     <li class="top-news__news-card">
                         <a href="<?php the_permalink(); ?>">
-                            <p class="top-news__news-card-title"><?php the_title(); ?></p>
+                            <p class="top-news__news-card-title">
+                                <?php
+                                    if (mb_strlen($post->post_title) > 40) {
+                                        $title = mb_substr($post->post_title, 0, 40);
+                                        echo $title . '...';
+                                    } else {
+                                        echo $post->post_title;
+                                    }
+                                    ?>
+                            </p>
+
                         </a>
                         <time class="top-news__news-card-date"
                             datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y-m-d'); ?></time>
