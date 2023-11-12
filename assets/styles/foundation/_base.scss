@@ -35,3 +35,8 @@ img {
 .grecaptcha-badge {
   visibility: hidden;
 }
+
+// 代替画像
+.alt-image {
+  object-fit: contain;
+}
