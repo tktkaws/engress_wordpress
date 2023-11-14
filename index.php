@@ -123,7 +123,6 @@
     </section>
     <section class="top-success">
         <h2 class="top-success-title">TOEFL成功事例</h2>
-
         <ul>
             <?php
             global $post;
@@ -134,7 +133,7 @@
             );
             $myposts = get_posts($args);
             foreach ($myposts as $post) : setup_postdata($post); ?>
-            <li class="top-success__card --first">
+            <li class="top-success__card">
                 <div class="top-success__card-title">
                     <?php the_title(); ?>
                 </div>
