@@ -11,12 +11,12 @@
                 弊社に興味を持って頂きありがとうございます。商談やサービスのご利用、資料請求について下記のフォームよりお問い合わせください。
             </p>
             <?php
-                    if (have_posts()) :
-                        while (have_posts()) : the_post();
-                    ?>
-            <?php the_content(); ?>
+            if (have_posts()) :
+                while (have_posts()) : the_post();
+            ?>
+                    <?php the_content(); ?>
             <?php endwhile;
-                    endif; ?>
+            endif; ?>
 
         </div>
 
