@@ -24,6 +24,10 @@
   align-items: center;
   border-top: solid 1px $c-sub-news;
   padding: 23px 0;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: start;
+  }
 }
 .news-index-item:last-child {
   border-bottom: solid 1px $c-sub-news;
@@ -32,18 +36,14 @@
   display: block;
   font-size: 16px;
   width: 136px;
-  @media only screen and (max-width: 787px) {
-    width: calc(136px * 0.8);
-    font-size: calc(16px * 0.8);
-  }
 }
-.news-title {
+.news-link {
   flex: 1;
   font-size: 16px;
   line-height: 1.5;
   text-decoration: underline;
-  @media only screen and (max-width: 787px) {
-    font-size: calc(16px * 0.8);
+  @media only screen and (max-width: 768px) {
+    margin-top: 10px;
   }
 }
 .pagenation ul {
