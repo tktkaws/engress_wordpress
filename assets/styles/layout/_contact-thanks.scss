@@ -1,19 +1,28 @@
-.contact-container {
+.contact-thanks {
   display: grid;
   grid-template-columns: 1fr 700px 1fr;
+  height: calc(100vh - 255px - 80px - 50px - 10px);
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr 90% 1fr;
+  }
+  @media only screen and (max-width: 375px) {
+    font-size: 12px;
+  }
 }
-.contact-container > * {
+.contact-thanks > * {
   grid-column: 2;
+}
+.contact-thanks-wrapper {
+  margin-top: 83px;
+  text-align: center;
+  line-height: 1.7;
 }
 
 .thanks-desc {
-  margin-top: 83px;
   text-align: center;
-  line-height: 1.6;
+  line-height: 1.7;
 }
-.thanks-link {
+.contact-thanks-link {
   text-decoration: underline;
   margin-top: 83px;
-  text-align: center;
-  margin-bottom: 80px;
 }
